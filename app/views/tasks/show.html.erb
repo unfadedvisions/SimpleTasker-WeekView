@@ -1,0 +1,39 @@
+
+<body id="background">
+
+<p id="notice"><%= notice %></p>
+
+<center>
+
+<div class="container">
+  <div class="col-md-20">
+    <div class="well center-it">
+  
+  <h1><strong><font size="40"><%= @task.name %></strong></font><h1>
+<p><font size="4">
+  <%= @task.description %>
+</font>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%=@task.month.name%> <%=@task.day_id%> <%= @task.year.name%>
+</p>
+
+
+<p>
+  <strong>Day:</strong>
+  <%= @task.day.name %>
+</p>
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Delete', @task, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', weeks_path %>
+</div>
+</div>
+
+
+</center>
+
+
+</body>
+</div>

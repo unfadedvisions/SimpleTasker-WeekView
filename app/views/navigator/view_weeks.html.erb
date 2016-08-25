@@ -1,0 +1,30 @@
+<%= link_to "New Task", new_path %>
+<% def box_create(string) %>
+	<div class="col-md-114">
+		<div class="alert alert-info">
+			<div class="well center-it">
+				<h3><%= string %></h3>
+				<% @tasks.each do |task| %>
+					<% if task.day.name == string %>
+						<ul>
+							<li><%= link_to task.name, task %></li>
+						</ul>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+<% end %>
+		<div class="container">
+			<table class="table">
+				<tbody>
+					<td><% box_create("Mon") %></td>
+					<td><% box_create("Tue") %></td>
+					<td><% box_create("Wed") %></td>
+					<td><% box_create("Thurs") %></td>
+					<td><% box_create("Fri") %></td>
+					<td><% box_create("Sat") %></td>
+					<td><% box_create("Sun") %></td>
+				</tbody>
+			</table>
+		</div>
